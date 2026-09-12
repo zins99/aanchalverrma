@@ -1,7 +1,7 @@
-export async function onRequestGet({ request, env }) {
+export async function onRequestGet({ env, params }) {
   if (!env.MEDIA) return new Response('R2 binding MEDIA is not configured.', { status: 503 });
 
-  const parts = Array.isArray(arguments[0]?.params?.path) ? arguments[0].params.path : [];
+  const parts = Array.isArray(params?.path) ? params.path : [];
   const key = parts.join('/').replace(/^\/+/, '');
   if (!['hero', 'announcement', 'work'].includes(key)) {
     return new Response('Not found', { status: 404 });
