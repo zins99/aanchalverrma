@@ -1,6 +1,6 @@
 # Aanchal Verma Creator Site
 
-Vite + React mobile-first creator landing page with a lightweight `/admin` content-control prototype.
+Vite + React mobile-first creator landing page with a Cloudflare-backed `/admin` content editor.
 
 ## Local development
 
@@ -14,5 +14,9 @@ npm run dev
 - Framework preset: Vite
 - Build command: `npm run build`
 - Output directory: `dist`
+- D1 binding: `DB` → `aanchal-content`
+- R2 binding: `MEDIA` → `aanchal-media` (when enabled)
 
-The current admin is intentionally unauthenticated and stores edits in browser localStorage. It is a prototype only and will be replaced with a real shared content backend before production use.
+The admin is intentionally unauthenticated for the prototype phase. Content is designed to use Cloudflare D1 and media is designed to use R2.
+
+Deployment trigger check: 2026-09-12
